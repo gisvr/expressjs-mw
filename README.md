@@ -10,11 +10,11 @@ npm i expressjs-mw
 ```js
 let express = require('express');
 let app = express();
-let mv = require("expressjs-mw")
+let mw = require("expressjs-mw")
 
 // 不限制跨域来源
 let allowList=[/\.*/]
-app.use(mv.crossOrigin.allowedOrigin(allowList))
+app.use(mw.crossOrigin.allowedOrigin(allowList))
 
 ```
 
@@ -22,13 +22,13 @@ app.use(mv.crossOrigin.allowedOrigin(allowList))
 ```js
 
 let allowList= ["www.g.cn", /http:\/\/localhost*/, /\*.github.com/]
-app.use(mv.crossOrigin.allowedOrigin(allowList))
+app.use(mw.crossOrigin.allowedOrigin(allowList))
 ```
 
 限制referer来源，使用正则
 ```js
 let allowList= ["www.g.cn", /http:\/\/localhost*/, /\*.github.com/]
-app.use(mv.crossOrigin.allowedReferer(allowList))
+app.use(mw.crossOrigin.allowedReferer(allowList))
 ```
 
 [example](./example/index.js)

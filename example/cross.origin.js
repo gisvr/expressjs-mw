@@ -2,18 +2,19 @@
 
 let express = require('express');
 let app = express();
-let mv = require("../index")
+let mw = require("../index")
 
 // 不限制跨域来源
-// app.use(mv.crossOrigin.allowedOrigin([/\.*/]))
+// app.use(mw.crossOrigin.allowedOrigin([/\.*/]))
 
+let allowList = [/\.*.github.com/, "www.g.cn", /http:\/\/localhost*/]
 // 限制跨域来源，使用正则
-app.use(mv.crossOrigin.allowedOrigin([/\.*.github.com/, "www.g.cn", /http:\/\/localhost*/,]))
+app.use(mw.crossOrigin.allowedOrigin(allowList))
 
-app.use(mv.bodyParser.urlencoded({limit: '5mb', extended: false}));
-app.use(mv.bodyParser.json({limit: '5mb'}));
-app.use(mv.compression());
-app.use(mv.cookieParser());
+app.use(mw.bodyParser.urlencoded({limit: '5mb', extended: false}));
+app.use(mw.bodyParser.json({limit: '5mb'}));
+app.use(mw.compression());
+app.use(mw.cookieParser());
 
 app.all("/", function (req, res, next) {
     res.send('expressjs-mw allowedOrigin');
