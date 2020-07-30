@@ -1,0 +1,29 @@
+{
+  "name": "expressjs-mw",
+  "version": "1.0.2",
+  "description": "Expressjs middleware collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "CORS",
+    "Access-Control-Allow-Origin",
+    "Refrere",
+    "Origin"
+  ],
+  "author": "txdev",
+  "repository": "git@github.com:gisvr/expressjs-mw",
+  "homepage": "https://github.com/gisvr/expressjs-mw",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "mocha": "^8.0.1",
+    "supertest": "^4.0.2"
+  }
+}
